@@ -1,0 +1,23 @@
+# Arquivos Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# VENV
+.venv
+
+# Ambiente
+.env
+
+# MLFlow
+mlruns/
+
+# Dados
+data/raw/*
+data/bronze/*
+data/silver/*
+data/gold/*
+!data/**/.gitkeep
