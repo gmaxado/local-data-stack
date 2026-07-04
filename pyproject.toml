@@ -1,5 +1,5 @@
 [project]
-name = "data-stack"
+name = "local-data-stack"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -9,3 +9,7 @@ dependencies = [
     "polars>=1.42.1",
     "pyarrow>=24.0.0",
 ]
+
+[build-system]
+requires = ["uv_build>=0.11.9,<0.12.0"]
+build-backend = "uv_build"

@@ -2,7 +2,7 @@ from pathlib import Path
 import polars as pl
 import pyarrow.dataset as ds
 
-def read_csv_to_parquet(path_input: Path, path_output: Path, partition_by_ordered_cols: list[str] = None) -> Path:
+def read_csv(path_input: Path) -> pl.LazyFrame:
 
     # Log - starting process:
     print(f'Attempt to read: {path_input}')
@@ -13,13 +13,18 @@ def read_csv_to_parquet(path_input: Path, path_output: Path, partition_by_ordere
     )
     print(f'Scanned .csv sucessfully!')
     
+    return csv_data
+
+def write_parquet(lazy_frame: pl.LazyFrame, path_output: Path, partition_by_ordered_cols: list[str] = None) -> Path:
+    
+    # Check if partition is valid:
     if partition_by_ordered_cols is not None:
-        cols = csv_data.collect_schema().names()
+        cols = lazy_frame.collect_schema().names()
         for column in partition_by_ordered_cols:
             assert column in cols, f'Partition column {column} not found in data!'
     
     # Collecting LazyFrame:
-    collected_frame = csv_data.collect()
+    collected_frame = lazy_frame.collect()
 
     # Data Info:
     row_count, col_count = collected_frame.shape
