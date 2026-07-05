@@ -21,3 +21,10 @@ data/bronze/*
 data/silver/*
 data/gold/*
 !data/**/.gitkeep
+
+# Logs
+transform/logs/
+logs/
+transform/target/
+transform/dbt_packages/
+transform/*.duckdb
