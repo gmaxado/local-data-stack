@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: ieee_fraud
+    tables:
+      - name: transaction
+        meta:
+          external_location: "data/bronze/transaction/**/*.parquet" # **/* -> look to all nested folders
+      - name: identity
+        meta:
+          external_location: "data/bronze/identity/**/*.parquet"
