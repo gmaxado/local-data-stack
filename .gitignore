@@ -31,3 +31,6 @@ transform/target/
 transform/dbt_packages/
 transform/*.duckdb
 .user.yml
+
+# Dagster
+orchestration/.dagster_home/
