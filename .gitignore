@@ -34,3 +34,6 @@ transform/*.duckdb
 
 # Dagster
 orchestration/.dagster_home/
+
+# Great Expectations
+quality/gx/uncommitted/
