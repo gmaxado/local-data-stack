@@ -2,7 +2,7 @@ transform:
   outputs:
     dev:
       type: duckdb
-      path: dev.duckdb
+      path: transform/dev.duckdb
       threads: 1
 
     prod:

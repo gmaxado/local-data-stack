@@ -1,0 +1,16 @@
+models:
+  - name: stg_ieee_fraud__transaction
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+      - name: is_fraud
+        tests:
+          - not_null  
+  - name: stg_ieee_fraud__identity
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
