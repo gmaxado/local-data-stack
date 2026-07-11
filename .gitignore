@@ -25,6 +25,9 @@ data/gold/*
 # Logs
 transform/logs/
 logs/
+
+# dbt
 transform/target/
 transform/dbt_packages/
 transform/*.duckdb
+.user.yml

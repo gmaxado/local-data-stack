@@ -1,6 +1,6 @@
 {{ config(
             materialized='external',    
-            location='data/gold/fct_transactions.parquet',
+            location='../data/gold/fct_transactions.parquet',
             format='parquet'
 ) }}
 

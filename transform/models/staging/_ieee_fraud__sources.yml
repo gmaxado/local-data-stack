@@ -5,7 +5,13 @@ sources:
     tables:
       - name: transaction
         meta:
-          external_location: "data/bronze/transaction/**/*.parquet" # **/* -> look to all nested folders
+          external_location: "../data/bronze/transaction/**/*.parquet" # **/* -> look to all nested folders
+          dagster:
+            asset_key: ['bronze_transaction']
       - name: identity
         meta:
-          external_location: "data/bronze/identity/**/*.parquet"
+          external_location: "../data/bronze/identity/**/*.parquet"
+          dagster:
+            asset_key: ['bronze_identity']
+
+            

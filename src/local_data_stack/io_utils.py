@@ -15,7 +15,7 @@ def read_csv(path_input: Path) -> pl.LazyFrame:
     
     return csv_data
 
-def write_parquet(lazy_frame: pl.LazyFrame, path_output: Path, partition_by_ordered_cols: list[str] = None) -> Path:
+def write_parquet(lazy_frame: pl.LazyFrame, path_output: Path, partition_by_ordered_cols: list[str] = None) -> dict[str, Path | int]:
     
     # Check if partition is valid:
     if partition_by_ordered_cols is not None:
@@ -54,4 +54,4 @@ def write_parquet(lazy_frame: pl.LazyFrame, path_output: Path, partition_by_orde
     
     print(f'Parquet file(s) saved on output path - {path_output}')
 
-    return path_output
+    return {'path': path_output, 'row_count': row_count}
